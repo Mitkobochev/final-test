@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zxx" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Panellhnies - Βίντεο</title>
+    <link rel="icon" href="{{ asset('img/pane_logo.jpg') }}" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}" />
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/elegant_Icon/elegent_icon.css') }}" />
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/niceselect/css/nice-select.css') }}" />
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/owl_carousel/css/owl.carousel.css') }}" />
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/magnify_popup/magnific-popup.css') }}" />
+    <!-- Countdown CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/countdown/css/Countdown.css') }}" />
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}" />
+    <!-- aos CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/aos/aos.css') }}" />
+    <!-- course CSS -->
+    <link rel="stylesheet" href="{{ asset('css/courses.css') }}" />
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+
+    <style>
+        .hidden {
+            display: none;
+        }
+        .page-numbers {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .page-numbers li {
+            margin: 0 5px;
+        }
+
+        .page-numbers a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: #f2f2f2;
+            color: #333;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-numbers a[style="background-color: transparent;"] {
+            background-color: transparent;
+        }
+
+        .page-numbers a:hover {
+            background-color: #66c0f4;
+        }
+
+        .page-numbers .active a {
+            background-color: #ff7f50;
+        }
+    </style>
+</head>
+
+<body>
+<!-- start Preloader  -->
+<div class="preloder_part">
+    <div class="spinner">
+        <div class="dot1"></div>
+        <div class="dot2"></div>
+    </div>
+</div>
+<!-- End Preloader  -->
+
+{% include 'header.html' %}
+
+<!-- courses part here -->
+<div id="content" class="site-content" bis_skin_checked="1">
+    <div class="lp-archive-courses" bis_skin_checked="1">
+
+        <div class="lp-content-area" bis_skin_checked="1">
+            <div class="lp-courses-bar list" bis_skin_checked="1">
+                <form class="search-courses">
+                    <input type="hidden" name="post_type" value="lp_course">
+                    <input type="hidden" name="taxonomy" value="">
+                    <input type="hidden" name="term_id" value="">
+                    <input type="hidden" name="term" value="">
+                    <input type="text" placeholder="Search courses..." name="s" value="" id="search-input">
+                </form>
+                <div class="switch-layout" bis_skin_checked="1">
+                    <input type="radio" name="lp-switch-layout-btn" value="grid" id="lp-switch-layout-btn-grid" checked="checked">
+                    <label class="switch-btn grid" title="Switch to grid" for="lp-switch-layout-btn-grid"></label>
+                    <input type="radio" name="lp-switch-layout-btn" value="list" id="lp-switch-layout-btn-list">
+                    <label class="switch-btn list" title="Switch to list" for="lp-switch-layout-btn-list"></label>
+                </div>
+            </div>
+            <ul class="learn-press-courses" data-layout="grid">
+                {% for video in videos %}
+                <li id="post-{{ video.getId() }}"
+                    class="post-{{ video.getId() }} lp_course type-lp_course status-publish has-post-thumbnail hentry course {% if loop.index > 12 %}hidden{% endif %}">
+                    <div class="course-item" bis_skin_checked="1">
+                        <div class="course-wrap-thumbnail" bis_skin_checked="1">
+                            <div class="course-thumbnail" bis_skin_checked="1">
+                                <a href="{{ path('app_video_id', {'id': video.getId()}) }}" bis_skin_checked="1">
+                                    <div class="thumbnail-preview" bis_skin_checked="1">
+                                        <div class="thumbnail" bis_skin_checked="1">
+                                            <div class="centered" bis_skin_checked="1">
+                                                <img width="370" height="280"
+                                                     id="imageElement-{{ video.getId() }}"
+                                                     src="fixGoogleDriveUrl({{ video.getImageUrl() }})"
+                                                     class="attachment-500x300 size-500x300 wp-post-image"
+                                                     alt="Software Development" loading="lazy">
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- START .course-content -->
+                        <div class="course-content" bis_skin_checked="1">
+                            <div class="course-categories" bis_skin_checked="1">
+                                <a href="{{ path('app_video_id', {'id': video.getId()}) }}" rel="tag"
+                                   bis_skin_checked="1">{{ video.getCategory() }}</a>
+                            </div>
+                            <a href="{{ path('app_video_id', {'id': video.getId()}) }}" class="course-permalink" bis_skin_checked="1">
+                                <h3 class="course-title">{{ video.getTitle() }}</h3>
+                            </a>
+                        </div>
+                        <!-- END .course-content -->
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <nav class="learn-press-pagination navigation pagination">
+                <ul class="page-numbers">
+                    <li class="prev" id="prev-page"><a href="#" onclick="previousPage()">&laquo; Previous</a></li>
+                    <li class="next" id="next-page"><a href="#" onclick="nextPage()">Next &raquo;</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- courses part end -->
+
+    {% include 'footer.html' %}
+    <!-- jquery slim -->
+    <script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+    <!-- popper js -->
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+    <!-- boots  tarp js -->
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <!-- nice select -->
+    <script src="{{ asset('vendors/niceselect/js/jquery.nice-select.min.js') }}"></script>
+    <!-- owl carousel js -->
+    <script src="{{ asset('vendors/owl_carousel/js/owl.carousel.min.js') }}"></script>
+    <!-- magnify popup js -->
+    <script src="{{ asset('vendors/magnify_popup/jquery.magnific-popup.js') }}"></script>
+    <!-- simplyCountdown js -->
+    <script src="{{ asset('vendors/countdown/js/simplyCountdown.min.js') }}"></script>
+    <!-- counter js -->
+    <script src="{{ asset('vendors/counter/jquery.countTo.js') }}"></script>
+    <!-- aos js -->
+    <script src="{{ asset('vendors/aos/aos.js') }}"></script>
+    <!-- courses js -->
+    <script src="{{ asset('js/courses.js') }}"></script>
+    <!-- font awesome js -->
+    <script src="https://kit.fontawesome.com/6ee3230338.js"></script>
+    <!-- custom js -->
+    <script src="{{ asset('js/custom.js') }}"></script>
+
+    <script>
+        // Function to modify the Google Drive URL to embed properly
+        function fixGoogleDriveUrl(url) {
+            const fileId = url.match(/\/d\/(.+?)\//)[1];
+            const fixedUrl = `https://drive.google.com/uc?id=${fileId}`;
+            return fixedUrl;
+        }
+        var imageElements = document.querySelectorAll("[id^='imageElement-']");
+        imageElements.forEach(function(imageElement) {
+            var imageUrl = imageElement.getAttribute('src');
+            var fixedImageUrl = fixGoogleDriveUrl(imageUrl);
+            imageElement.setAttribute('src', fixedImageUrl);
+        });
+        // JavaScript for pagination
+        var currentPage = 1;
+        var itemsPerPage = 12;
+        var items = document.querySelectorAll('.learn-press-courses > li');
+        var totalPages = Math.ceil(items.length / itemsPerPage);
+        var paginationList = document.querySelector('.page-numbers');
+        var currentLayout = 'grid';
+
+        function showPage(page) {
+            var startIndex = (page - 1) * itemsPerPage;
+            var endIndex = startIndex + itemsPerPage;
+
+            for (var i = 0; i < items.length; i++) {
+                if (i >= startIndex && i < endIndex) {
+                    items[i].classList.remove('hidden');
+                } else {
+                    items[i].classList.add('hidden');
+                }
+            }
+        }
+
+        function sortVideosByTitle() {
+            var videosList = Array.from(document.querySelectorAll('.learn-press-courses > li'));
+            videosList.sort(function(a, b) {
+                var titleA = a.querySelector('.course-title').textContent;
+                var titleB = b.querySelector('.course-title').textContent;
+
+                // Extract and parse number from title
+                var numberA = parseFloat(titleA.split(' ')[0]);
+                var numberB = parseFloat(titleB.split(' ')[0]);
+
+                return numberA - numberB;
+            });
+
+            var parent = document.querySelector('.learn-press-courses');
+            videosList.forEach(function(video) {
+                parent.appendChild(video);
+            });
+        }
+        function goToPage(page) {
+            if (page >= 1 && page <= totalPages && page !== currentPage) {
+                currentPage = page;
+                showPage(currentPage);
+                updatePagination();
+            }
+        }
+
+
+        function updatePagination() {
+            // Clear existing page links
+            paginationList.innerHTML = '';
+
+            // Add numbered page links
+            for (var i = 1; i <= totalPages; i++) {
+                var pageItem = document.createElement('li');
+                if (i === currentPage) {
+                    pageItem.setAttribute('class', 'active');
+                }
+                var pageLink = document.createElement('a');
+                pageLink.setAttribute('href', '#    ');
+                pageLink.innerHTML = i;
+                pageLink.addEventListener('click', function(page) {
+                    return function() {
+                        goToPage(page);
+                    };
+                }(i));
+                pageItem.appendChild(pageLink);
+                paginationList.appendChild(pageItem);
+            }
+        }
+
+        // Show the first page initially
+        sortVideosByTitle();
+        showPage(currentPage);
+        updatePagination();
+
+        var searchInput = document.getElementById('search-input');
+        var items = document.querySelectorAll('.learn-press-courses > li');
+
+        searchInput.addEventListener('keydown', function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                return false;
+            }
+        });
+
+        searchInput.addEventListener('input', function() {
+            var query = searchInput.value.toLowerCase();
+
+            for (var i = 0; i < items.length; i++) {
+                var title = items[i].querySelector('.course-title').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    items[i].classList.remove('hidden');
+                } else {
+                    items[i].classList.add('hidden');
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+

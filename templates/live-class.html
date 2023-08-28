@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Streams</title>
+    <link rel="icon" href="{{ ('img/header_photo.jpg') }}" type="image/jpg">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="css/animate.css"/>
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="vendors/elegant_Icon/elegent_icon.css"/>
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="vendors/niceselect/css/nice-select.css"/>
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="vendors/owl_carousel/css/owl.carousel.css"/>
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="vendors/magnify_popup/magnific-popup.css"/>
+    <!-- Countdown CSS -->
+    <link rel="stylesheet" href="vendors/countdown/css/Countdown.css"/>
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="css/flaticon.css"/>
+    <!-- aos CSS -->
+    <link rel="stylesheet" href="vendors/aos/aos.css"/>
+    <!-- meeting CSS -->
+    <link rel="stylesheet" href="css/meeting.css"/>
+    <!-- style CSS -->
+    <link rel="stylesheet" href="style.css"/>
+</head>
+
+<body>
+    {%include 'header.html'%}
+    <!-- breadcrumb part -->
+    <section class="breadcrumb_part blog_grid_bg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 ">
+                    <div class="breadcrumb_iner">
+                        <h2>Live Class</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- breadcrumb part end -->
+    
+    <!-- live class part here -->
+    <div id="content" class="site-content padding_bottom" bis_skin_checked="1">
+        <div class="content-area container" bis_skin_checked="1">
+            <main id="main" class="site-main" role="main">
+                <div class="vczapi-wrap dpn-zvc-single-content-wrapper dpn-zvc-single-content-wrapper-83" id="dpn-zvc-single-content-wrapper-83" bis_skin_checked="1">
+                    <div data-aos="fade-up"
+            data-aos-duration="1200" class="vczapi-col-8" bis_skin_checked="1">
+                        <div class="deepn-zvc-single-featured-img" bis_skin_checked="1">
+                            <img width="1000" height="613" src="img/meeting.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="" loading="lazy"></div>
+                            <div class="deepn-zvc-single-description" bis_skin_checked="1">
+                                <p>
+                                   {{streamData.description}}
+                                </p>
+                            </div>
+                        </div>
+                        <div data-aos="fade-up"
+            data-aos-duration="1600" class="vczapi-col-4" bis_skin_checked="1">
+                            <div class="dpn-zvc-sidebar-wrapper" bis_skin_checked="1">
+                                <div class="dpn-zvc-sidebar-box" bis_skin_checked="1">
+                                    <div class="dpn-zvc-timer" bis_skin_checked="1">
+                                        <div class="countdown" id="timer">
+                                            <div class="countdown">
+                                                <div class="dpn-zvc-timer-cell" bis_skin_checked="1">
+                                                    <div class="time" id="days" data-aos="fade-up">--</div>
+                                                    <div class="label"></div>
+                                                </div>
+                                                <div class="dpn-zvc-timer-cell" bis_skin_checked="1">
+                                                    <div class="time" id="hours" data-aos="fade-up">--</div>
+                                                    <div class="label"></div>
+                                                </div>
+                                                <div class="dpn-zvc-timer-cell" bis_skin_checked="1">
+                                                    <div class="time" id="minutes" data-aos="fade-up">--</div>
+                                                    <div class="label"></div>
+                                                </div>
+                                                <div class="dpn-zvc-timer-cell" bis_skin_checked="1">
+                                                    <div class="time" id="seconds" data-aos="fade-up">--</div>
+                                                    <div class="label"></div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="dpn-zvc-sidebar-box" bis_skin_checked="1">
+                                <div class="dpn-zvc-sidebar-tile" bis_skin_checked="1">
+                                    <h3>Details</h3>
+                                </div>
+                                <div class="dpn-zvc-sidebar-content" bis_skin_checked="1">
+                                    <div class="dpn-zvc-sidebar-content-list vczapi-hosted-by-topic-wrap" bis_skin_checked="1">
+                                        <span><strong>Topic:</strong></span> <span>{{streamData.topic}}</span>
+                                    </div>
+                                    <div class="dpn-zvc-sidebar-content-list vczapi-hosted-by-start-time-wrap" bis_skin_checked="1">
+                                        <span><strong>Start:</strong></span>
+                                        <span class="sidebar-start-time">{{streamData.startTime}}</span>
+                                    </div>
+                                    <div class="dpn-zvc-sidebar-content-list vczapi-duration-wrap" bis_skin_checked="1">
+                                        <span><strong>Duration:</strong></span>
+                                        <span>{{streamData.hours}} hour {{streamData.minutes}} minutes</span>
+                                    </div>
+                                </div>
+                                <div class="dpn-zvc-sidebar-box" bis_skin_checked="1">
+                                    <div class="join-links" bis_skin_checked="1">
+                                        <a target="_blank" href="{{streamData.streamLink}}" class="btn btn-join-link btn-join-via-app" bis_skin_checked="1">Join Meeting</a>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                    <div class="clearfix" bis_skin_checked="1"></div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- live class part end -->
+
+	<!-- End LTR & RTL Button -->
+	{% include 'footer.html' %}
+
+    <script>
+        // Assuming streamData.startTime is in the format 'YYYY-MM-DD HH:mm:ss'
+        var startTime = new Date("{{ streamData.startTime }}");
+        var countdownOptions = {
+            year: startTime.getFullYear(),
+            month: startTime.getMonth(),
+            day: startTime.getDate(),
+            hours: startTime.getHours(),
+            minutes: startTime.getMinutes(),
+            seconds: startTime.getSeconds(),
+            enableUtc: false  // Change to true if your startTime is in UTC
+        };
+
+
+        function updateCountdown() {
+            var now = new Date();
+            var timeDifference = startTime - now;
+
+            if (timeDifference > 0) {
+                var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+            }
+        }
+
+    </script>
+
+
+    <!-- jquery slim -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- bootstarp js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- nice select -->
+    <script src="vendors/niceselect/js/jquery.nice-select.min.js"></script>
+    <!-- owl carousel js -->
+    <script src="vendors/owl_carousel/js/owl.carousel.min.js"></script>
+    <!-- magnify popup js -->
+    <script src="vendors/magnify_popup/jquery.magnific-popup.js"></script>
+    <!-- simplyCountdown js -->
+    <script src="vendors/countdown/js/simplyCountdown.min.js"></script>
+    <!-- counter js -->
+    <script src="vendors/counter/jquery.countTo.js"></script> 
+    <!-- aos js -->
+    <script src="vendors/aos/aos.js"></script>
+    <!-- custom js -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

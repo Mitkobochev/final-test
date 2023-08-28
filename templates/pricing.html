@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}"/>
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/elegant_Icon/elegent_icon.css') }}"/>
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/niceselect/css/nice-select.css') }}"/>
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/owl_carousel/css/owl.carousel.css') }}"/>
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/magnify_popup/magnific-popup.css') }}"/>
+    <!-- Countdown CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/countdown/css/Countdown.css') }}"/>
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}"/>
+    <!-- aos CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/aos/aos.css') }}"/>
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{{ asset('style.css') }}"/>
+</head>
+
+<body>
+<header>{% include 'header.html'%}</header>
+<section class="section">
+    <div class="container">
+        <h1>Διαβατήριο της Επιτυχίας</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="table-default grad1">
+                    <div class="table__header">
+                        <h2 class="table__header--title">{{ pricing[2].name }}</h2>
+                        <p data-price="{{ pricing[2].price }}" class="table__header--price">
+                            <span>€</span> {{ pricing[2].price }}
+                        </p>
+                    </div>
+                    <div class="table__content">
+                        <ul class="table__content--list">
+                            <li>Πρόσβαση σε 25+ βίντεο Μαθηματικών</li>
+                            <li>Όλο το Κεφάλαιο 3 (Ολοκληρώματα)</li>
+                            <li>10+1 Λυμμένα Θέματα (Β' / Γ' / Δ')</li>
+                        </ul>
+                    </div>
+                    <div class="table__footer">
+                        <a href="{{ path('app_checkout', {'plan_id': pricing[2].id}) }}" class="button">Επίλεξέ το</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="table-default grad3">
+                    <div class="table__header">
+                        <h2 class="table__header--title">{{ pricing[1].name }}</h2>
+                        <p data-price="{{ pricing[1].price }}" class="table__header--price">
+                            <span>€</span> {{ pricing[1].price }}
+                        </p>
+                    </div>
+                    <div class="table__content">
+                        <ul class="table__content--list">
+                            <li>Πρόσβαση σε 375+ βίντεο ΑΕΠΠ & ΑΟΘ</li>
+                            <li>Ασκήσεις ανά κεφάλαιο ΑΕΠΠ/ΑΟΘ (.pdf)</li>
+                            <li>Αναλυτικές Λύσεις όλων των ασκήσεων</li>
+                            <li>Σ/Λ & Πολλαπλής κάθε κεφαλαίου (+ Λύσεις)</li>
+                            <li>Livestream κάθε εβδομάδα ΑΕΠΠ/ΑΟΘ</li>
+                        </ul>
+                    </div>
+                    <div class="table__footer">
+                        <a href="{{ path('app_checkout', {'plan_id': pricing[1].id}) }}" class="button">Eεκλείωσε το Pro</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="table-default grad2">
+                    <div class="table__header">
+                        <h2 class="table__header--title">{{ pricing[0].name }}</h2>
+                        <p data-price="{{ pricing[0].price }}" class="table__header--price">
+                            <span>€</span> {{ pricing[0].price }}
+                        </p>
+                    </div>
+                    <div class="table__content">
+                        <ul class="table__content--list">
+                            <li>Πρόσβαση σε 195+ βίντεο ΑΟΘ</li>
+                            <li>Πρόσβαση σε 180+ βίντεο ΑΕΠΠ</li>
+                            <li>Πρόσβαση σε 25+ βίντεο Μαθηματικών</li>
+                            <li>100+ βίντεο με Θέματα ΑΕΠΠ/ΑΟΘ</li>
+                            <li>Ασκήσεις ανά κεφάλαιο ΑΕΠΠ/ΑΟΘ (.pdf)</li>
+                            <li>Αναλυτικές Λύσεις όλων των ασκήσεων ΑΕΠΠ/ΑΟΘ</li>
+                            <li>Σ/Λ & Πολλαπλής κάθε κεφαλαίου (+ Λύσεις)</li>
+                            <li>Livestream κάθε εβδομάδα ΑΕΠΠ/ΑΟΘ</li>
+                        </ul>
+                    </div>
+                    <div class="table__footer">
+                        <a href="{{ path('app_checkout', {'plan_id': pricing[0].id}) }}" class="button">Ενεργοποίησέ το</a>
+                    </div>
+                </div>
+            </div>
+</section>
+{% include 'footer.html' %}
+</body>
+
+<style>
+    body {
+        font-family: "Nunito", sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        background-color: #f7f7f7;
+    }
+
+    .section {
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .section h1 {
+        font-size: 36px;
+        font-weight: 600;
+        margin-bottom: 40px;
+        color: #333;
+    }
+
+    .table-default {
+        background-color: #fff;
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+        margin-top: 40px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .table-default:hover {
+        transform: translateY(-5px);
+    }
+
+    .table__header--title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #333;
+
+    }
+
+    .table__header--price {
+        font-size: 36px;
+        font-weight: 700;
+        color: #f0f0f0;
+        margin: 20px 0;
+        text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    }
+
+    .table__content--list li {
+        font-size: 16px;
+        font-weight: 600;
+        padding: 8px 0;
+        color: #555;
+        list-style-type: none;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .table__footer {
+        margin-top: 20px;
+    }
+
+    .button {
+        display: inline-block;
+        width: 100%;
+        font-size: 14px;
+        max-width: 180px;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        background-color: #e878d4;
+        color: #fff;
+        border-radius: 50px;
+        text-decoration: none;
+    }
+
+    .button:hover {
+        background-color: #b3ceeb;
+        color: #333;
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .grad1 {
+        background: linear-gradient(220deg, #e878d4, #b3ceeb);
+    }
+
+    .grad2 {
+        background: linear-gradient(220deg, #ffafbd, #ffc3a0);
+    }
+
+    .grad3 {
+        background: linear-gradient(220deg, #51a8c2, #a3dac4);
+    }
+
+    /* Header Styles */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    li {
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .section {
+            padding: 70px 0;
+        }
+    }
+
+</style>
+<script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+<!-- popper js -->
+<script src="{{ asset('js/popper.min.js') }}"></script>
+<!-- bootstarp js -->
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<!-- nice select -->
+<script src="{{ asset('vendors/niceselect/js/jquery.nice-select.min.js') }}"></script>
+<!-- owl carousel js -->
+<script src="{{ asset('vendors/owl_carousel/js/owl.carousel.min.js') }}"></script>
+<!-- magnify popup js -->
+<script src="{{ asset('vendors/magnify_popup/jquery.magnific-popup.js') }}"></script>
+<!-- simplyCountdown js -->
+<script src="{{ asset('vendors/countdown/js/simplyCountdown.min.js') }}"></script>
+<!-- counter js -->
+<script src="{{ asset('vendors/counter/jquery.countTo.js') }}"></script>
+<!-- aos js -->
+<script src="{{ asset('vendors/aos/aos.js') }}"></script>
+<!-- custom js -->
+<script src="{{ asset('js/custom.js') }}"></script>
+
+</html>
+

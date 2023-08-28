@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Varsity - Educational and Online Course HTML Website Template</title>
+    <link rel="icon" href="{{ asset('img/favicon.png') }}" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
+    <!-- animate CSS -->
+    <link rel="stylesheet" href="{{ asset('css/animate.css') }}" />
+    <!-- font awesome CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/elegant_Icon/elegent_icon.css') }}" />
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/niceselect/css/nice-select.css') }}" />
+    <!-- owl carousel CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/owl_carousel/css/owl.carousel.css') }}" />
+    <!-- magnific popup CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/magnify_popup/magnific-popup.css') }}" />
+    <!-- Countdown CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/countdown/css/Countdown.css') }}" />
+    <!-- flaticon CSS -->
+    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}" />
+    <!-- aos CSS -->
+    <link rel="stylesheet" href="{{ asset('vendors/aos/aos.css') }}" />
+    <!-- style CSS -->
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+
+</head>
+
+<body>
+
+<!-- End LTR & RTL Button -->
+
+<!-- footer part here -->
+<footer class="footer_section">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-lg-3 col-sm-6">
+                <div class="single_feature_footer footer_nav">
+                    <span style="margin-top: 20px;">
+                    <h4>ΠΑΝΕΛΛΗΝΙΕΣ</h4>
+                    </span>
+                    <img src="{{ asset('img/pane_logo2.png') }}" alt="#" style="height: 40px; width: 40px; margin-left: 20px">
+                    <p>Με την καλύτερη ομάδα καθηγητών.
+                        Φροντίζουμε για κάθε μαθητή.</p>
+                    <div class="footer_contact_info">
+                        <a href="tel:+464145684325" style="color: black; text-decoration: none;">694 909 9872</a>
+                        <a href="mailto:education@example.com" style="color: black; text-decoration: none;">support@panellhnies.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single_feature_footer footer_nav">
+                    <h4>ΒΙΝΤΕΟΜΑΘΗΜΑΤΑ</h4>
+                    <ul>
+                        <li><a href="{{ path('app_video_category', {'category': 'Οικονομικά (ΑΟΘ)'}) }}">Οικονομικά</a></li>
+                        <li><a href="{{ path('app_exercise_category', {'category': 'Οικονομικά (ΑΟΘ)'}) }}">Πληροφορική</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-2 col-sm-6">
+                <div class="single_feature_footer footer_nav">
+                    <h4>ΠΛΗΡΟΦΟΡΙΕΣ</h4>
+                    <ul>
+                        <li><a href="#">Όροι Χρήσης</a></li>
+                        <li><a href="#">Προσωπικά Δεδομένα</a></li>
+                        <li><a href={{path('app_contact_us')}}>Στείλτε μήνυμα</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="copyright_part">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 col-md-8">
+                            <p>Copyright © 2023 | Powered by Μαθήματα Πανελληνίων
+                            </p>
+                        </div>
+                        <div class="col-lg-6 col-md-4">
+                            <div>
+                                <a href="https://www.facebook.com/panellhniescom">
+                                    <img src={{asset('img/fb.jpg')}} alt="Facebook" style="width:34px; height: 34px;">
+
+                                </a>
+                                <a href="https://www.youtube.com/@panellhnies">
+                                    <img src={{asset('img/youtube_small.jpg')}} alt="Youtube" style="width:200px; height: 200px;">
+                                </a>
+                                <a href="https://www.instagram.com/panellhnies_com/">
+                                    <img src={{asset('img/insta.png')}} alt="Instagram" style="width:29px; height: 29px;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="{{ asset('img/icon/shape_01.png') }}" alt="#" class="footer_sharp_1">
+    <img src="{{ asset('img/icon/about_shape_02.png') }}" alt="#" class="footer_sharp_2 custom-animation2">
+    <img src="{{ asset('img/icon/about_shape_03.png') }}" alt="#" class="footer_sharp_3 custom-animation3">
+</footer>
+<!-- footer part end -->
+
+<!-- jquery slim -->
+<script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+<!-- popper js -->
+<script src="{{ asset('js/popper.min.js') }}"></script>
+<!-- bootstarp js -->
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<!-- nice select -->
+<script src="{{ asset('vendors/niceselect/js/jquery.nice-select.min.js') }}"></script>
+<!-- owl carousel js -->
+<script src="{{ asset('vendors/owl_carousel/js/owl.carousel.min.js') }}"></script>
+<!-- magnify popup js -->
+<script src="{{ asset('vendors/magnify_popup/jquery.magnific-popup.js') }}"></script>
+<!-- simplyCountdown js -->
+<script src="{{ asset('vendors/countdown/js/simplyCountdown.min.js') }}"></script>
+<!-- counter js -->
+<script src="{{ asset('vendors/counter/jquery.countTo.js') }}"></script>
+<!-- aos js -->
+<script src="{{ asset('vendors/aos/aos.js') }}"></script>
+<!-- custom js -->
+<script src="{{ asset('js/custom.js') }}"></script>
+</body>
+
+</html>

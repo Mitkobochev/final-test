@@ -1,0 +1,57 @@
+/* CSS for the registration form */
+.course_registration_form {
+    background-color: #f8f9fa;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.course_registration_form h3 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.course_registration_form .form-control {
+    height: 50px;
+    border-radius: 3px;
+}
+
+.course_registration_form button[type="submit"] {
+    margin-top: 20px;
+}
+
+/* Additional CSS for a fancy look */
+.course_details_iner {
+    padding: 40px;
+}
+
+.course_details h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-check-label {
+    font-size: 14px;
+}
+
+.form-check-input {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.registration_logo {
+    margin-bottom: 40px;
+}
+
+.logo-container {
+    align-items: center;
+}
+
+body {
+    background-image: url('../img/register_background_logo.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    height: 100vh;
+}

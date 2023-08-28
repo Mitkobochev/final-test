@@ -1,0 +1,63 @@
+/* CSS for the login form */
+.login_form_container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.login_form_container .form-control {
+    height: 50px;
+    border-radius: 3px;
+}
+
+.login_form_container button[type="submit"] {
+    margin-top: 20px;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.login_form_container button[type="submit"]:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.login_form_container .form-check-label {
+    font-size: 14px;
+}
+
+.login_form_container .form-check-input {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
+
+.login_form_container .forgot_password {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.login_form_container .forgot_password a {
+    color: #007bff;
+}
+
+.login_form_container .register_link {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.login_form_container .register_link a {
+    color: #007bff;
+    font-weight: bold;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.registration_logo {
+    margin-bottom: 38px;
+}
